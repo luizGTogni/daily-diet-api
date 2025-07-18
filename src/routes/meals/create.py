@@ -7,7 +7,7 @@ from flask import request, jsonify
 def create():
     name, description, meal_date, is_diet = request.get_json().values()
     
-    if not (name and description and meal_date and is_diet):
+    if not (name and description and meal_date):
         return jsonify({ "error": "Credentials is missing or invalid" }), 400
     
     meal_date_datetime = datetime.strptime(meal_date, '%Y-%m-%dT%H:%M:%SZ').replace(tzinfo=timezone.utc)
