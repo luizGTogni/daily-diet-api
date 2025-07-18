@@ -16,4 +16,4 @@ db = SQLAlchemy(app)
 login_manager = LoginManager(app)
 login_manager.login_view = "login"
 
-from src.routes.meals import create, get_all
+from src.routes.meals import create, get_all, get_one
